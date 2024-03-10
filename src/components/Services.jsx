@@ -2,6 +2,7 @@ import Heading from "./Heading";
 import Section from "./Section";
 import { service1, service2, service3, check } from "../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
+import Generating from "./Genereting";
 
 const Services = () => {
   return (
@@ -38,6 +39,21 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+            <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg:right-auto lg:bottom-8 lg:translate-x-1/2" />
+          </div>
+
+          <div className="relative z-1 grid gap-5 lg:grid-cols-2">
+            <div className="relative min-h-[39rem] border border-n-1/10 rounded-3xl overflow-hidden">
+              <div className="absolute inset-0">
+                <img
+                  src={service2}
+                  alt="robot"
+                  className="h-full w-full object-cover"
+                  width={630}
+                  height={750}
+                />
+              </div>
             </div>
           </div>
         </div>
