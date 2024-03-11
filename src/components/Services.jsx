@@ -3,6 +3,12 @@ import Section from "./Section";
 import { service1, service2, service3, check } from "../assets";
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
 import Generating from "./Genereting";
+import {
+  PhotoChatMessage,
+  Gradient,
+  VideoBar,
+  VideoChatMessage,
+} from "./design/Services";
 
 const Services = () => {
   return (
@@ -23,6 +29,7 @@ const Services = () => {
                 className="w-full h-full object-cover md:object-right"
               />
             </div>
+
             <div className="relative z-1 max-w-[17rem] ml-auto">
               <h4 className="h-4 mb-4">Smartest AI</h4>
               <p className="body-2 mb-[3rem] text-n-3">
@@ -54,8 +61,66 @@ const Services = () => {
                   height={750}
                 />
               </div>
+
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15">
+                <h4 className="h-4 mb-4">Photo editing</h4>
+                <p className="body-2 mb-[3rem] text-n-3">
+                  Automatically enchane your photos using our AI apps photo
+                  editting feature . Try eit now{" "}
+                </p>
+              </div>
+
+              <PhotoChatMessage />
+            </div>
+
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[45rem]">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Video generation</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                  The worlds most powerfull AI photos and videos art generation{" "}
+                  engine. What will you create?
+                </p>
+
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item, index) => (
+                    <li
+                      key={index}
+                      className={`rounded-2xl flex items-center justify-center ${
+                        index === 2
+                          ? "w-3[rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
+                          : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div
+                        className={
+                          index === 2
+                            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem] "
+                            : ""
+                        }
+                      >
+                        <img src={item} alt={item} height={24} width={24} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem] ">
+                <img
+                  src={service3}
+                  alt="Scary Robot"
+                  width={520}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+
+                <VideoChatMessage />
+                <VideoBar />
+              </div>
             </div>
           </div>
+
+          <Gradient />
         </div>
       </div>
     </Section>
